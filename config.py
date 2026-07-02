@@ -1,18 +1,16 @@
 import os
-from pathlib import Path
 
-BASE_DIR = Path(__file__).parent
-DATA_DIR = BASE_DIR / 'data'
+BOT_TOKEN = "ВАШ_ТОКЕН"
 
-EXCEL_FILE = DATA_DIR / 'map.xlsx'
-EMPLOYEES_CSV = DATA_DIR / 'employees.csv'
-LEADS_ADMINS_CSV = DATA_DIR / 'leads_admins.csv'
-RECOMMENDATIONS_CSV = DATA_DIR / 'recommendations.csv'
-RESULTS_CSV = DATA_DIR / 'results.csv'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+RESULTS_DIR = os.path.join(BASE_DIR, "results")
 
-HARD_SHEET = 'Узкоспециализированные (Hard)'
-SOFT_SHEET = 'Общепрофессиональные (Soft)'
+MATRIX_FILE = os.path.join(DATA_DIR, "matrix.xlsx")
+EMPLOYEES_FILE = os.path.join(DATA_DIR, "employees.csv")
+ADMINS_LEADS_FILE = os.path.join(DATA_DIR, "admins_leads.csv")
+RECOMMENDATIONS_FILE = os.path.join(DATA_DIR, "recommendations.csv")
+RESULTS_FILE = os.path.join(RESULTS_DIR, "results.csv")
 
-BOT_TOKEN = os.getenv('BOT_TOKEN')
-if not BOT_TOKEN:
-    raise ValueError("BOT_TOKEN не задан в переменных окружения")
+# Убедимся, что папка results существует
+os.makedirs(RESULTS_DIR, exist_ok=True)

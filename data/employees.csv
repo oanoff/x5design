@@ -1,4 +1,4 @@
-telegram_id,name,direction
-123456789,Анна,Команда А
-987654321,Борис,Команда А
+telegram_id,full_name,direction
+123456789,Иванов Иван,Product
+987654321,Петрова Анна,Research
 ...
